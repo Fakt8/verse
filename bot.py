@@ -1,6 +1,7 @@
 import discord
 import pyowm
 import asyncio
+import os
 import random
 from discord.ext import commands
 from discord import Embed
@@ -476,7 +477,10 @@ async def help( ctx ):
 
 
 # Token
+token = os.environ.get('BOT_TOKEN')
 
-token = open( 'token.txt', 'r' ).readline()
+bot.run(str(token))
 
-client.run( token )
+#token = open( 'token.txt', 'r' ).readline()
+
+#client.run( token )
